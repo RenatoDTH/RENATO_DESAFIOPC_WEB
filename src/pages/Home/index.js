@@ -4,6 +4,7 @@ import {
   Content,
   ContentHeader,
   ContentBody,
+  ImageContainer,
   FormWindow,
 } from './styles';
 import Header from '../../components/Header';
@@ -25,7 +26,11 @@ const Home = () => {
           <h2>Preencha os campos abaixo para receber</h2>
         </ContentHeader>
         <ContentBody>
-          <img src={pc} alt="pc" />
+          <ImageContainer>
+            <div>
+              <img src={pc} alt="pc" />
+            </div>
+          </ImageContainer>
           <FormWindow>
             <Input
               name="nome"

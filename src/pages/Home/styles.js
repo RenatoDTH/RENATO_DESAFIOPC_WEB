@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   display: flex;
   background: #07305a;
   flex-direction: column;
@@ -19,7 +19,7 @@ export const ContainerText = styled.div`
 
 export const Content = styled.div`
   margin: 0px 100px 100px 50px;
-  padding: 20px 10px;
+  padding: 30px 20px;
   width: 100%;
   max-width: 1200px;
   background: #eaf0f4;
@@ -34,7 +34,7 @@ export const ContentHeader = styled.div`
   h1 {
     font-weight: 700;
     size: 32px;
-    line-height: 36px;
+    line-height: 42px;
     color: #000000;
   }
   h2 {
@@ -48,10 +48,22 @@ export const ContentHeader = styled.div`
 export const ContentBody = styled.div`
   margin-top: 50px;
   display: flex;
+`;
 
-  img {
-    width: 500px;
-    height: 417px;
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 500px;
+  height: 417px;
+
+  div {
+    position: absolute;
+    left: -250px;
+    top: -60px;
+
+    img {
+      width: 900px;
+      height: 750px;
+    }
   }
 `;
 
