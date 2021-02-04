@@ -23,4 +23,8 @@ export const Container = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 9px;
   }
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;

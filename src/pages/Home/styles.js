@@ -18,7 +18,7 @@ export const ContainerText = styled.div`
 `;
 
 export const Content = styled.div`
-  margin: 0px 100px 100px 50px;
+  margin: 0px 100px 50px 100px;
   padding: 30px 20px;
   width: 100%;
   max-width: 1200px;
@@ -28,6 +28,11 @@ export const Content = styled.div`
   display: flex;
   justify-items: center;
   flex-direction: column;
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    margin: 10px;
+  } ;
 `;
 
 export const ContentHeader = styled.div`
@@ -42,6 +47,18 @@ export const ContentHeader = styled.div`
     font-weight: 400;
     line-height: 36px;
     letter-spacing: -0.015em;
+  }
+
+  @media (max-width: 1100px) {
+    h1 {
+      size: 28px;
+      line-height: 30px;
+    }
+
+    h2 {
+      size: 18px;
+      line-height: 30px;
+    }
   }
 `;
 
@@ -64,6 +81,9 @@ export const ImageContainer = styled.div`
       width: 900px;
       height: 750px;
     }
+  }
+  @media (max-width: 1100px) {
+    display: none;
   }
 `;
 

@@ -25,4 +25,8 @@ export const Container = styled.div`
     resize: vertical;
     padding: 10px;
   }
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
