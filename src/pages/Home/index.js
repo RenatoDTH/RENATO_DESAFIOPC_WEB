@@ -1,8 +1,12 @@
+import { Container } from './styles';
+import Header from '../../components/Header';
+
 const Home = () => {
   return (
-    <div>
+    <Container>
+      <Header />
       <p>Hello Project</p>
-    </div>
+    </Container>
   );
 };
 
