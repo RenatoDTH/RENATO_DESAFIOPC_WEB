@@ -9,6 +9,7 @@ import {
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
+import Button from '../../components/Button';
 import pc from '../../assets/photo.svg';
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
               pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}"
             />
             <Textarea name="textarea" type="text" />
+            <Button>ENVIAR</Button>
           </FormWindow>
         </ContentBody>
       </Content>
