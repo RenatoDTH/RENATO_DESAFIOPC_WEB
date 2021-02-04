@@ -10,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  margin: 5px 0;
   background: #000000;
   position: relative;
   align-items: center;
