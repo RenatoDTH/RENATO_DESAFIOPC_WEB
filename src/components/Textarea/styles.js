@@ -24,6 +24,7 @@ export const Container = styled.div`
     border-radius: 9px;
     resize: vertical;
     padding: 10px;
+    font-size: 18px;
   }
 
   @media (max-width: 1100px) {
