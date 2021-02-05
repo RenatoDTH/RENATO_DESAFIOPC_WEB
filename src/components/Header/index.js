@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <Container>
       <Content>
-        <div>
+        <a href="https://projetocurso.com.br/" target="_blank" rel="noreferrer">
           <img src={logo} alt="projetoCurso" />
-        </div>
+        </a>
         <img src={projetoCurso} alt="projetoCurso" />
       </Content>
     </Container>

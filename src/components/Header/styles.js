@@ -21,7 +21,7 @@ export const Content = styled.div`
   display: flex;
   padding: 10px 30px 10px 10px;
 
-  div {
+  a {
     background: #ffffff;
     align-items: center;
     justify-content: center;
