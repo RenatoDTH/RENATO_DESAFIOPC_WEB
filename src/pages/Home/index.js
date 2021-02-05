@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import {
   Container,
   ContainerText,
@@ -14,6 +15,8 @@ import Button from '../../components/Button';
 import pc from '../../assets/photo.svg';
 
 const Home = () => {
+  const handleSubmit = useCallback(() => {}, []);
+
   return (
     <Container>
       <Header />
@@ -31,7 +34,7 @@ const Home = () => {
               <img src={pc} alt="pc" />
             </div>
           </ImageContainer>
-          <FormWindow>
+          <FormWindow onSubmit={handleSubmit}>
             <Input
               name="nome"
               label="Nome"

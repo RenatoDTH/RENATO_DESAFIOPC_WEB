@@ -71,6 +71,7 @@ export const ImageContainer = styled.div`
   position: relative;
   width: 500px;
   height: 417px;
+  pointer-events: none;
 
   div {
     position: absolute;
@@ -87,6 +88,6 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const FormWindow = styled.div`
+export const FormWindow = styled.form`
   flex-direction: column;
 `;
