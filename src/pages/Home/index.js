@@ -1,4 +1,6 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+import { toast } from 'react-toastify';
+import * as Yup from 'yup';
 import {
   Container,
   ContainerText,
@@ -15,7 +17,44 @@ import Button from '../../components/Button';
 import pc from '../../assets/photo.svg';
 
 const Home = () => {
-  const handleSubmit = useCallback(() => {}, []);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [textArea, setTextArea] = useState('');
+
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+
+      const data = {
+        nome: name,
+        email,
+        telefone: phone,
+        textArea,
+      };
+
+      const schema = Yup.object().shape({
+        nome: Yup.string().required('Nome obrigatório'),
+        email: Yup.string('Digite um e-mail válido').required(
+          'E-mail obrigatório',
+        ),
+        telefone: Yup.string()
+          .matches(new RegExp('[0-9]{9}'))
+          .required('Digite um telefone válido'),
+        textArea: Yup.string(),
+      });
+
+      try {
+        await schema.validate(data, { abortEarly: false });
+        toast.success(
+          `Nós já recebemos o formulário, ${name}! Entraremos em contato em breve!`,
+        );
+      } catch (err) {
+        toast.error('Verifique os campos obrigatórios');
+      }
+    },
+    [email, name, phone, textArea],
+  );
 
   return (
     <Container>
@@ -40,22 +79,28 @@ const Home = () => {
               label="Nome"
               type="text"
               placeholder="Colocar o nome"
+              onChange={(e) => setName(e.target.value)}
             />
             <Input
               name="email"
               label="Email"
               type="email"
               placeholder="Colocar o E-mail"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               name="telefone"
               label="Telefone"
               type="tel"
-              placeholder="DDD-00000-0000"
-              pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}"
+              placeholder="DDD123456789"
+              onChange={(e) => setPhone(e.target.value)}
             />
-            <Textarea name="textarea" type="text" />
-            <Button>ENVIAR</Button>
+            <Textarea
+              name="textarea"
+              type="text"
+              onChange={(e) => setTextArea(e.target.value)}
+            />
+            <Button type="submit">ENVIAR</Button>
           </FormWindow>
         </ContentBody>
       </Content>

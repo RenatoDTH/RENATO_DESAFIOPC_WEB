@@ -1,7 +1,7 @@
 import { ButtonComponent } from './styles';
 
 const Button = ({ ...rest }) => {
-  return <ButtonComponent type="button" {...rest} />;
+  return <ButtonComponent {...rest} />;
 };
 
 export default Button;
