@@ -48,9 +48,17 @@ const Home = () => {
         await schema.validate(data, { abortEarly: false });
         toast.success(
           `Nós já recebemos o formulário, ${name}! Entraremos em contato em breve!`,
+          { autoClose: 3800 },
         );
+
+        setTimeout(() => {
+          window.open(
+            'https://drive.google.com/file/d/1MPxofGDTw5CxeboJjv7b8t7waaXu3WXf/view',
+            '_blank',
+          );
+        }, 4000);
       } catch (err) {
-        toast.error('Verifique os campos obrigatórios');
+        toast.error('Verifique os campos obrigatórios', { autoClose: 3800 });
       }
     },
     [email, name, phone, textArea],
