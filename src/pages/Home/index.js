@@ -47,7 +47,7 @@ const Home = () => {
       try {
         await schema.validate(data, { abortEarly: false });
         toast.success(
-          `Nós já recebemos o formulário, ${name}! Entraremos em contato em breve!`,
+          `Nós já recebemos o formulário, ${name}. Entraremos em contato em breve!`,
           { autoClose: 3800 },
         );
 
