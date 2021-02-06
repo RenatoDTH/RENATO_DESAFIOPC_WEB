@@ -40,6 +40,7 @@ const Home = () => {
         ),
         telefone: Yup.string()
           .matches(new RegExp('[0-9]{9}'))
+          .max(12)
           .required('Digite um telefone válido'),
         textArea: Yup.string(),
       });
